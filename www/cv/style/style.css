@@ -1,0 +1,185 @@
+body{
+  background:black;
+}
+
+div{
+  background:white;
+  position:relative;
+}
+
+li{
+  list-style:none;
+}
+
+#dhaakon-cv-wrapper{
+  color:black;
+  width: 1024px;
+  display:block;
+  margin:auto;
+  font-family:source-sans-pro, Helvetica, sans-serif;
+}
+#dhaakon-title-information{
+  height:110px;
+  display:block;
+  position:relative;
+  padding-top:20px;
+  width:960px;
+  margin:auto;
+}
+
+#dhaakon-introduction{
+  background:white;
+  display:block;
+  width:50%;
+  height:100%;
+  position:absolute;
+}
+
+#dhaakon-information{
+  width:50%;
+  height:100%;
+  display:block;
+  background:white;
+  position:absolute;
+}
+
+#dhaakon-work-experience{
+  position:relative;
+  padding-top:20px;
+  width:960px;
+  margin:auto;
+
+}
+#dhaakon-profile{
+  width:960px;
+  margin:auto;
+}
+
+#dhaakon-profile ul{
+  width:200px;
+  margin:0;
+  display:inline-block;
+  padding:0;
+}
+h1, h2, h3{
+  margin:0;
+}
+
+.left{
+  left:0px;
+}
+
+.right{
+  right:0px;
+  text-align:right;
+}
+
+
+.year li{
+  font-size:30px;
+  position:relative;
+  display:block;
+  height:320px;
+}
+.year span{
+  position:absolute;
+}
+.year div{
+  position:absolute;
+}
+
+.year h3{
+  margin:0;
+  font-weight:thin;
+  font-style:normal;
+  font-size:0.7em;
+  text-align:left;
+
+}
+.year p{
+  margin:0;
+  font-size:0.5em;
+}
+.job-description{
+  width:450px;
+  text-align:left;
+  padding-top:12px;
+  border-top:1px solid lightgray;
+}
+.job-title{
+  color:#555;
+  text-align:left;
+
+}
+.job-date{
+  color:#777;
+  text-align:left;
+
+}
+
+#dhaakon-education{
+  padding-bottom:10px;
+}
+
+a{
+  /*text-decoration:none;*/
+  color:black;
+}
+
+.job-links{
+  padding-top:20px;
+  font-size:14px;
+}
+.job-links a{
+  padding-left:20px;
+  color: #777;
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+#dhaakon-additional-resources{
+  padding-bottom:80px;
+  margin-bottom:10px;
+}
+#dhaakon-additional-resources a{
+  font-size:24px;
+  float:right;
+  display:block;
+
+}
+
+#navigation{
+  position:fixed;
+  width:20%;
+  left:0px;
+  color:white;
+  background:none;
+}
+#navigation a{
+  background:none;
+  color:white;
+  text-decoration:none;
+  font-family:source-sans-pro, Helvetica, sans-serif;
+}
+#navigation a:hover{
+  text-decoration:underline;
+}
+
+#dhaakon-skills{
+  padding-top:40px;
+  padding-bottom:40px;
+  margin:auto; 
+  width:85%;
+}
+
+@media print{
+  div#dhaakon-title-navigation{
+    display:none;
+  };
+  div#dhaakon-additional-resources > *{
+    display:none;
+  };
+  body{
+    width:1024px;
+  }
+}

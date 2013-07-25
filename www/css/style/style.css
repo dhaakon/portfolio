@@ -1,0 +1,10 @@
+body {
+  background: black;
+}
+#dhaakon-cv-wrapper h1,
+h2 {
+  color: white;
+}
+.job-description {
+  width: 400px;
+}

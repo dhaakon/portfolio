@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+<meta property="og:image" content="http://www.dhaakon.com/facebook-share.jpg"/>
+<meta property="og:title" content="Interactive Portfolio of David Poyner"/>
+<meta property="og:site_name" content="dhaakon.com"/>
+<meta property="og:description" content="The interactive portfolio of front-end developer David Poyner."/>
+<title>dhaakon.com | interactve portfolio of david poyner</title>
+<link rel="stylesheet" href="css/video-js.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="//use.edgefonts.net/source-sans-pro;overlock:n4,i4,n7,i7,n9,i9.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.45538.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.1/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.1/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.1/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.1/TimelineMax.min.js"></script>
+<script>
+  videojs.options.flash.swf = "swf/video-js.swf"
+</script>
+</head>
+
+<body>
+
+<!-- Main wrapper -->
+<div id="dhaakon-portfolio-wrapper">
+
+  <!-- Main Navigation -->
+  <div id="dhaakon-title-bar">
+    <div id="dhaakon-heading">
+      <span><a href="mailto:david.poyner@dhaakon.com"><h1>dhaakon</h1></a></span>
+    </div>
+    <div id="dhaakon-title-navigation" class="hidden">
+      <span><a href="#work">work</a></span>
+      <span><a href="#experiments">experiments</a></span>
+      <span><a href="#about">about</a></span>
+    </div>
+    <a href="#main"><span id="dhaakon-close">X</span></a>
+  </div>
+  <!---->
+  <!-- Video Container -->
+  <div id="dhaakon-video-wrapper">
+    <h1 id="dhaakon-video-title"> default </h1>
+    <div id="dhaakon-video-container"></div>
+    <span class='right' id="close">X</span>   
+  </div>
+  <!---->
+
+  <!-- Main Section --!>
+  <div id="portfolio-slider">
+    <div id="dhaakon-sketch-container"></div>
+  </div>
+  <!---->
+  <!-- Work Section --!>
+  <div id="dhaakon-work-container" class="container hidden">
+    <div id="navigation"></div>
+    <div id="portfolio-container">
+      <ul id="work-templates">
+      </ul>
+    </div>
+  </div>
+  <!---->
+  <!-- Experiments Section --!>
+  <div id="dhaakon-experiments-container" class="container hidden">
+    <div id="navigation"></div>
+    <div id="experiments-container">
+      <ul id="experiments-work-templates"></ul>
+    </div>
+  </div>
+  <!---->
+  <!-- About Section --!>
+  <div id="dhaakon-about-container" class="container hidden">
+    <div id="video-section"></div>
+    <div id="about-content-section-wrapper">
+      <div id="about-content-section-container">
+        <div class="left">
+          <h1>about</h1>
+          <hr>
+          <br>
+          <p>
+              David Haakon Poyner is an interactive developer who currently resides in Brooklyn, New York.
+              When David is not hacking away in Vim, you can probably find him sketching, biking, or
+              playing hockey. 
+          </p>
+              <br>
+          <p>
+              David enjoys complex visual problems which need to be solved through technical means.
+              He also enjoys the challenge in learning new tools to stay current in today's ever-changing market. He believes the web is the next frontier
+              in creative landscapes and David works tirelessly to discover it's new possibilities.
+          </p>
+              <br>
+          <p>
+            If you are interesting in hiring David for full-time or part time work, you can view 
+            a copy of his CV <a href="./cv/">here.</a>
+          </p>
+          <br><br><br>
+          <span><a target="_blank" href="http://github.com/dhaakon/">Github</a><a target="_blank" href="http://codepen.io/dhaakon">Codepen</a><a target="_blank" href="http://coroflot.com/dhaakon/">Coroflot</a></span>
+        </div>
+        <div class="right">
+          <img src="img/about.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!-- Info Section --!>
+  <div id="dhaakon-info">
+    <h1>?</h1>
+  </div>
+  <!---->
+  <!-- Footer Section --!>
+  <footer>
+    <div class="left">
+     &copy; david poyner &nbsp; &nbsp; || &nbsp; &nbsp; interactive portfolio 
+    </div>
+    <div class="right">
+      <span>
+      <a target="_new" href="http://www.twitter.com/share?url=http%3A%2F%2Fwww.dhaakon.com&related=dhaakon" data-url="http://www.dhaakon.com" data-via="dhaakon"><img src="img/twitter-bird.png"/></a>
+      <a target="_new" href="https://www.facebook.com/share.php?u=http://www.dhaakon.com"><img src="img/facebook-logo.png"/></a>
+      </span>
+    </div>
+  </footer>
+  <!---->
+
+</div>
+<!-- -->
+
+<!-- SVG Section for coffee physics images -->
+<div id="svgElement" style="display:none;"></div>
+<!---->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6597459-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="js/dhaakon-portfolio.js" charset="utf-8"></script>
+</body>
+</html>

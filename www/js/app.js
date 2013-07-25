@@ -1,0 +1,1 @@
+((function(){var a,b=this;a=function(){function a(){console.log("new portfoio constructed")}return a}(),window.onload=function(){return new a}})).call(this)
