@@ -1,6 +1,4 @@
 ## @author  dhaakon (David Poyner)
-## @license MIT
-
 
 # Dependencies
 
@@ -108,6 +106,7 @@ class Portfolio
 
   navigateToLink : (e)=> 
     if !@isActive then return
+
     if e.target.href? else return
     destName = e.target.href.split('#')[1]
     if destName? else return
@@ -119,6 +118,7 @@ class Portfolio
 
     #console.log destName
     if @physix? then @physix.destroySketch()
+
     @isActive = false
     # Create the appropriate module
     @createModule destName
