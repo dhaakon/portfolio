@@ -2,8 +2,7 @@ var Animations;
 
 Animations = {
   fade: function(direction, obj, delay, duration, cb, end) {
-    var opts, tween,
-      _this = this;
+    var tween;
     if (!end) {
       end = 1;
     }
@@ -20,47 +19,6 @@ Animations = {
         onComplete: cb
       });
     }
-    tween.play();
-    return;
-    opts = {
-      node: obj,
-      delay: delay,
-      duration: duration,
-      curve: direction === 'in' ? [0, 1] : [1, 0],
-      onAnimate: function(c) {
-        return this.node.style.opacity = c;
-      }
-    };
-    if (cb) {
-      opts._callbacks = {
-        onComplete: [
-          function() {
-            return cb();
-          }
-        ]
-      };
-    }
-    tween = new Tween(opts);
-    return tween.play();
-  },
-  drop: function(direction, obj, delay, duration, cb) {
-    var cssProperty, dist, opts, tween;
-    if (direction === "down") {
-      cssProperty = "top";
-    } else {
-      cssProperty = "bottom";
-    }
-    dist = Utils.getCSS(obj, cssProperty);
-    opts = {
-      node: obj,
-      delay: delay,
-      duration: duration,
-      curve: [parseInt(dist.split('px')[0], 0)],
-      onAnimate: function(c) {
-        return this.node.style[cssProperty] = c + "px";
-      }
-    };
-    tween = new Tween(opts);
     return tween.play();
   },
   tween: function(prop, obj, delay, duration, dist, cb) {
