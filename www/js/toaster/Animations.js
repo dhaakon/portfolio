@@ -64,29 +64,14 @@ Animations = {
     return tween.play();
   },
   tween: function(prop, obj, delay, duration, dist, cb) {
-    var opts, tween,
-      _this = this;
-    opts = {
-      node: obj,
-      delay: delay,
-      duration: duration,
-      curve: dist,
-      easing: Tween.Easing.Quad.easeInOut,
-      onAnimate: function(c) {
-        return this.node.style[prop] = c;
-      }
-    };
-    if (cb) {
-      opts._callbacks = {
-        onComplete: [
-          function() {
-            return cb();
-          }
-        ]
-      };
+    var tween;
+    if (prop === 'opacity') {
+      return tween = TweenLite.to(obj, duration, {
+        delay: delay,
+        opacity: dist,
+        onComplete: cb
+      });
     }
-    tween = new Tween(opts);
-    return tween.play();
   },
   move: function(obj, delay, duration, dist, cb, z) {
     var onUpdate, opts, tween,
