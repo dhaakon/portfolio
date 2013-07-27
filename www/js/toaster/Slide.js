@@ -17,6 +17,10 @@ Slide = (function() {
 
   Slide.prototype.SLIDE_MOVE_DELAY = 0.5;
 
+  Slide.prototype.DIM = 0.4;
+
+  Slide.prototype.LIGHT = 1;
+
   Slide.prototype.container = null;
 
   Slide.prototype.title = null;
@@ -123,7 +127,10 @@ Slide = (function() {
 
   Slide.prototype.activate = function() {
     this.isActive = true;
-    return this.startSlideshow();
+    this.startSlideshow();
+    Animations.tween('opacity', this.imagesSlideshow, 0.5, 0.5, this.LIGHT);
+    Animations.tween('opacity', this.title, 0.47, 0.5, this.LIGHT);
+    return Animations.tween('opacity', this.button, 0.5, 0.4, this.LIGHT);
   };
 
   Slide.prototype.deactivate = function() {
@@ -134,7 +141,10 @@ Slide = (function() {
       clearInterval(this.interval);
     }
     this.interval = null;
-    return this.move(0);
+    this.move(0);
+    Animations.tween('opacity', this.imagesSlideshow, 0, 0.3, this.DIM);
+    Animations.tween('opacity', this.title, 0, 0.3, this.DIM);
+    return Animations.tween('opacity', this.button, 0, 0.3, this.DIM);
   };
 
   Slide.prototype.update = function() {
