@@ -96,6 +96,9 @@ a {
 }
 .height-transition {
   -webkit-transition: 300ms height;
+  -moz-transition: 300ms height;
+  -ms-transition: 300ms height;
+  -o-transition: 300ms height;
 }
 .rgb-border {
   box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.65), 0px 4px 0px 0px rgba(0, 255, 0, 0.65), 0px 6px 0px 0px rgba(0, 0, 255, 0.65);
@@ -106,7 +109,10 @@ a {
 
 }
 .gradient-transition {
-  -webkit-transition: 0.2s background;
+  -webkit-transition: 0.2 background;
+  -moz-transition: 0.2 background;
+  -ms-transition: 0.2 background;
+  -o-transition: 0.2 background;
 }
 @-webkit-keyframes text-shadow-animation {
   0% {
@@ -128,6 +134,9 @@ a {
 body {
   background: black;
   -webkit-transition: 100ms background;
+  -moz-transition: 100ms background;
+  -ms-transition: 100ms background;
+  -o-transition: 100ms background;
   -webkit-transition-delay: 100ms;
 }
 /*
@@ -172,7 +181,13 @@ body {
   left: 0;
   top: -80px;
   -webkit-transition: 300ms height;
+  -moz-transition: 300ms height;
+  -ms-transition: 300ms height;
+  -o-transition: 300ms height;
   -webkit-transition: 1s top;
+  -moz-transition: 1s top;
+  -ms-transition: 1s top;
+  -o-transition: 1s top;
   -webkit-transition-delay: 0ms;
   box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.65), 0px 4px 0px 0px rgba(0, 255, 0, 0.65), 0px 6px 0px 0px rgba(0, 0, 255, 0.65);
 }
@@ -251,6 +266,9 @@ footer {
   position: absolute;
   bottom: -70px;
   -webkit-transition: 1s bottom;
+  -moz-transition: 1s bottom;
+  -ms-transition: 1s bottom;
+  -o-transition: 1s bottom;
   -webkit-transition-delay: 900ms;
   color: #787878;
   font-family: source-sans-pro;
@@ -373,10 +391,6 @@ footer div {
   /* IE6-9 fallback on horizontal gradient */
 
   opacity: 0;
-  /*background:black;*/
-
-  /*-webkit-transform:translate3d(0px,0px,1px);*/
-
 }
 #dhaakon-work-container #portfolio-container,
 #dhaakon-experiments-container #portfolio-container,
@@ -403,13 +417,6 @@ footer div {
   font-weight: 600;
   cursor: pointer;
   z-index: 10;
-}
-#dhaakon-work-container #navigation,
-#dhaakon-experiments-container #navigation {
-  /*z-index:101;*/
-
-  /*position:relative;*/
-
 }
 #dhaakon-work-container #previous-btn,
 #dhaakon-experiments-container #previous-btn {
@@ -443,7 +450,10 @@ footer div {
 #dhaakon-work-container .slide button,
 #dhaakon-experiments-container .slide button {
   border: none;
-  -webkit-transition: 0.2s background;
+  -webkit-transition: 0.2 background;
+  -moz-transition: 0.2 background;
+  -ms-transition: 0.2 background;
+  -o-transition: 0.2 background;
   /*background: -moz-radial-gradient( 50% 50%, circle closest-side, rgb( 255, 0, 0 ) 0%, rgb( 115, 0, 0 ) 100%);*/
 
   /*background: -webkit-radial-gradient( 50% 50%, circle, rgb( 135, 0, 0 ) 0%, rgb( 85, 0, 0 ) 100%);*/
@@ -512,8 +522,6 @@ footer div {
   font-style: italic;
   text-shadow: 0px 0px 30px #ff0000;
   /*.animation(text-shadow-animation)*/
-
-  /*opacity:0.4*/
 
 }
 /** About Section **/
