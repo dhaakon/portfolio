@@ -127,10 +127,7 @@ Slide = (function() {
 
   Slide.prototype.activate = function() {
     this.isActive = true;
-    this.startSlideshow();
-    Animations.tween('opacity', this.imagesSlideshow, 0.5, 0.5, this.LIGHT);
-    Animations.tween('opacity', this.title, 0.47, 0.5, this.LIGHT);
-    return Animations.tween('opacity', this.button, 0.5, 0.4, this.LIGHT);
+    return this.startSlideshow();
   };
 
   Slide.prototype.deactivate = function() {
@@ -141,10 +138,19 @@ Slide = (function() {
       clearInterval(this.interval);
     }
     this.interval = null;
-    this.move(0);
+    return this.move(0);
+  };
+
+  Slide.prototype.dim = function() {
     Animations.tween('opacity', this.imagesSlideshow, 0, 0.3, this.DIM);
     Animations.tween('opacity', this.title, 0, 0.3, this.DIM);
     return Animations.tween('opacity', this.button, 0, 0.3, this.DIM);
+  };
+
+  Slide.prototype.lighten = function() {
+    Animations.tween('opacity', this.imagesSlideshow, 0.5, 0.5, this.LIGHT);
+    Animations.tween('opacity', this.title, 0.47, 0.5, this.LIGHT);
+    return Animations.tween('opacity', this.button, 0.5, 0.4, this.LIGHT);
   };
 
   Slide.prototype.update = function() {

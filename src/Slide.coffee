@@ -99,9 +99,7 @@ class Slide
   activate       : ()->
     @isActive = true
     @startSlideshow()
-    Animations.tween 'opacity', @imagesSlideshow, 0.5, 0.5, @LIGHT
-    Animations.tween 'opacity', @title, 0.47, 0.5, @LIGHT
-    Animations.tween 'opacity', @button, 0.5, 0.4, @LIGHT
+    #@lighten()
 
   deactivate     : ()->
     @isActive = false
@@ -114,9 +112,15 @@ class Slide
 
     @move 0
 
+  dim            : ()->
     Animations.tween 'opacity', @imagesSlideshow, 0, 0.3, @DIM
     Animations.tween 'opacity', @title, 0, 0.3, @DIM
     Animations.tween 'opacity', @button, 0, 0.3, @DIM
+
+  lighten        : ()->
+    Animations.tween 'opacity', @imagesSlideshow, 0.5, 0.5, @LIGHT
+    Animations.tween 'opacity', @title, 0.47, 0.5, @LIGHT
+    Animations.tween 'opacity', @button, 0.5, 0.4, @LIGHT
 
   update         : ()->
     @cb = ()=> @update()
