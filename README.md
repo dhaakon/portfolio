@@ -6,7 +6,7 @@ purposes. It includes source files, design files, and video files.
 
 http://www.dhaakon.com/
 
-Tools
+Tools & Libraries
 -----
 
 • MacVim<br>
