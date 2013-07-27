@@ -5,9 +5,11 @@ class Slide
   IMAGE_WIDTH     : 703
   IMAGE_HEIGHT    : 359
 
-  SLIDESHOW_DELAY : 140
+  SLIDESHOW_DELAY     : 140
   SLIDE_MOVE_DURATION : 0.6
-  SLIDE_MOVE_DELAY : 0.5
+  SLIDE_MOVE_DELAY    : 0.5
+  DIM                 : 0.4
+  LIGHT               : 1
 
   container       : null
   title           : null
@@ -97,9 +99,9 @@ class Slide
   activate       : ()->
     @isActive = true
     @startSlideshow()
-    #Animations.tween 'opacity', @imagesSlideshow, 0.5, 0.5, [0.4, 1]
-    #Animations.tween 'opacity', @title, 0.47, 0.5, [0.4, 1]
-    #Animations.tween 'opacity', @button, 0.5, 0.4, [0.4, 1]
+    Animations.tween 'opacity', @imagesSlideshow, 0.5, 0.5, @LIGHT
+    Animations.tween 'opacity', @title, 0.47, 0.5, @LIGHT
+    Animations.tween 'opacity', @button, 0.5, 0.4, @LIGHT
 
   deactivate     : ()->
     @isActive = false
@@ -112,9 +114,9 @@ class Slide
 
     @move 0
 
-    #Animations.tween 'opacity', @imagesSlideshow, 0, 0.3, [1, 0.4]
-    #Animations.tween 'opacity', @title, 0, 0.3, [1, 0.4]
-    #Animations.tween 'opacity', @button, 0, 0.3, [1, 0.4]
+    Animations.tween 'opacity', @imagesSlideshow, 0, 0.3, @DIM
+    Animations.tween 'opacity', @title, 0, 0.3, @DIM
+    Animations.tween 'opacity', @button, 0, 0.3, @DIM
 
   update         : ()->
     @cb = ()=> @update()

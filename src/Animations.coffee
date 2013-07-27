@@ -43,23 +43,8 @@ Animations =
     tween.play()
 
   tween  : (prop, obj, delay, duration, dist, cb) ->
-    opts =
-      node      : obj
-      delay     : delay
-      duration  : duration
-      curve     : dist
-      easing    : Tween.Easing.Quad.easeInOut
-      onAnimate : (c) ->
-        @node.style[prop] = c
-
-    if cb 
-      opts._callbacks =
-        onComplete:[
-          ()=>cb()
-        ]
-
-    tween = new Tween opts
-    tween.play()
+    if prop == 'opacity'
+      tween = TweenLite.to obj, duration, {delay:delay, opacity:dist, onComplete:cb}
 
   move  : (obj, delay, duration, dist, cb, z) ->
     opts =

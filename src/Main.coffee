@@ -159,8 +159,5 @@ class Portfolio
     @portfolioVideo.videoJS.play()
     @portfolioVideo.show()
 
-
-
-
 window.onload = (=> 
   new Portfolio())
