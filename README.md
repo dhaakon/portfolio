@@ -9,12 +9,12 @@ http://www.dhaakon.com/
 Tools
 -----
 
-MacVim
-CoffeeScript
-Sketch.js
-CoffeePhysics
-GSAP
-Adobe Creative Suite (Photoshop, AfterEffects, Illustrator)
-EventEmitter
+• MacVim
+• CoffeeScript
+• Sketch.js
+• CoffeePhysics
+• GSAP
+• Adobe Creative Suite (Photoshop, AfterEffects, Illustrator)
+• EventEmitter
 
 
