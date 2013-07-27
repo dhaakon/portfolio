@@ -57,14 +57,12 @@ class Portfolio
     @portfolioVideo = new PortfolioVideo()
 
     # Fade in sketch container
-    #@sketchContainer.style.opacity = 1
     Animations.fade 'in', @sketchContainer, 0.1, 0.4
 
     # Add Listeners
     @addListeners()
 
   addListeners  : ()->
-    #EventManager.addListeners 
     EventManager.addListener Events.WINDOW_RESIZE, @onResize
     EventManager.addListener Events.CLOSE_EVENT, @onModuleClose
     EventManager.addListener Events.BUTTON_GO_EVENT, @onShowVideo
@@ -84,11 +82,8 @@ class Portfolio
     # Fade in Title bar
     Animations.fade 'in', @title, 0.4, 0.1
 
-    # Drop down heading and bring up the footer
     @heading.style.top = '0px'
     @footer.style.bottom = '0px'
-    #Animations.drop 'down', @heading, 0, 300
-    #Animations.drop 'up', @footer, 0, 300
 
   setupNavigationLinks : ()->
 
@@ -105,6 +100,7 @@ class Portfolio
 
 
   navigateToLink : (e)=> 
+    # TODO: Better hash location
     if !@isActive then return
 
     if e.target.href? else return
