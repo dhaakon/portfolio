@@ -17,4 +17,8 @@ Tools & Libraries
 • Adobe Creative Suite (Photoshop, AfterEffects, Illustrator)<br>
 • EventEmitter<br>
 
+TODO
+-----
+- [ ] blog
+
 
