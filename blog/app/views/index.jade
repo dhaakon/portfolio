@@ -1,4 +1,11 @@
-extends layout 
+extends blogpost 
 
 block content
-  p Welcome to my blog
+  - var posts = getPosts(0,5)
+  - var page  = 1
+  - each post in posts
+    div.container
+      div.post
+        h1 #{post.title}
+        div.preview 
+          != post.preview

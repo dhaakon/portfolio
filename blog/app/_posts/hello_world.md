@@ -2,7 +2,7 @@
     "title"    : "Hello, World",
     "tags"     : [ "Commentary" ],
     "category" : "Social",
-    "date"     : "07-28-2013",
+    "date"     : "07-27-2013",
     "preview"  : "First blog post testing out poet and node.js"
 
 }}}

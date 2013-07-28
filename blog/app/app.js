@@ -57,8 +57,8 @@
     function Blog() {
       this.port = process.env.PORT || 3000;
       this.app = express();
+      console.log(this.app);
       this.startPoet();
-      this.setupExpress();
     }
 
     Blog.prototype.startPoet = function() {
@@ -75,20 +75,22 @@
         }
       });
       return this.poet.init().then(function() {
-        console.log('poet initialized');
-        return console.log(_this.poet.posts);
+        return _this.setupExpress();
       });
     };
 
     Blog.prototype.setupExpress = function() {
-      var _this = this;
+      var cb,
+        _this = this;
       this.app.set('view engine', 'jade');
       this.app.set('views', __dirname + '/views');
       this.app.use(express["static"](__dirname + '/public'));
       this.app.use(this.app.router);
-      this.app.get('/', function(req, res) {
+      cb = function(req, res) {
+        console.log(res);
         return res.render('index');
-      });
+      };
+      this.app.get('/', cb);
       return this.app.listen(this.port);
     };
 

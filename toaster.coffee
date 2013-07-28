@@ -2,7 +2,7 @@
 toast 'src',
 
   # EXCLUDED FOLDERS (optional)
-  # exclude: ['folder/to/exclude', 'another/folder/to/exclude', ... ]
+   #exclude: ['folder/to/exclude', 'another/folder/to/exclude', ... ]
 
   # => VENDORS (optional)
   vendors: [

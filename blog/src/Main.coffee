@@ -1,5 +1,4 @@
 #<< Database
-
 express = require 'express'
 routes = require './routes'
 user = require './routes/user'
@@ -15,9 +14,9 @@ class Blog
   constructor   :   ()->
     @port = process.env.PORT or 3000
     @app = express() 
-
+    console.log @app
     @startPoet()
-    @setupExpress()
+        
 
   startPoet     :   ()->
     @poet = require('poet')(@app,   
@@ -30,9 +29,10 @@ class Blog
           '/mytags/:tag': 'tag',
           '/mycategories/:category': 'category'
     )
+
     @poet.init().then ()=> 
-      console.log 'poet initialized'
-      console.log @poet.posts
+      @setupExpress()
+
 
   setupExpress  :   ()->
     @app.set 'view engine', 'jade'
@@ -40,8 +40,11 @@ class Blog
     @app.use express.static __dirname + '/public'
     @app.use @app.router
 
-    @app.get '/', (req, res)=> res.render 'index'
+    cb = (req, res) => 
+      console.log res
+      res.render 'index'
 
+    @app.get '/', cb
     @app.listen @port 
 
 new Blog()

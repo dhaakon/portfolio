@@ -1,4 +1,17 @@
-blog
+dhaakon's blog
 ====
 
-Amazon S3 blog using node.js
+This is a simple blog set up using poet.js.
+
+Storage
+----
+- Amazon
+
+Technologies
+----
+- Express
+- Node
+- Poet
+- CoffeeScript
+
+

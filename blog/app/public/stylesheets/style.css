@@ -63,6 +63,11 @@ h1 {
   padding-bottom: 50px; }
   .post .content {
     padding-bottom: 14px; }
+  .post blockquote {
+    font-family: overlock;
+    font-size: 26px;
+    font-style: italic;
+    color: grey; }
   .post h1 {
     color: black;
     font-size: 44px;

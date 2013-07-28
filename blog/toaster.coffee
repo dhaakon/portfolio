@@ -2,13 +2,13 @@
 toast 'src',
 
   # EXCLUDED FOLDERS (optional)
-  # exclude: ['folder/to/exclude', 'another/folder/to/exclude', ... ]
+  exclude: ['src/site/']
 
   # => VENDORS (optional)
   # vendors: ['vendors/x.js', 'vendors/y.js', ... ]
 
   # => OPTIONS (optional, default values listed)
-  bare: false
+  bare:false 
   packaging: false 
   expose: ''
   minify: false
