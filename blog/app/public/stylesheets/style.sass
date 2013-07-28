@@ -6,25 +6,45 @@ $blue   :   rgba(0,0,255,0.65)
 @mixin rgb-border
   box-shadow: 0px 2px 0px 0px $red, 0px 4px 0px 0px $green, 0px 6px 0px 0px $blue
 
+@mixin bg
+  background: rgba(175,30,30,1.0)
+  background: -moz-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%, #0e0e0e 100%)
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(175,30,30,1.0)), color-stop(100%,#000000))
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 30%,#000000 100%)
+  background: -o-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
+  background: -ms-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
+  background: radial-gradient(ellipse at center, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(175,30,30,1.0)', endColorstr='#0e0e0e',GradientType=1 )
+
+html
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  @include bg
+
 body
   margin     : 0
-  background : black
+  height     : 1080px
 
 h1
   margin     : 0
 
 .date
-  float        : right
-  padding-top  : 22px
+  font-family : source-sans-pro
+  font-weight : 100
+  font-size   : 14px
+  color       : grey
+  //float       : right
 
 .container
   width        : 768px
-  height       : 100%
   display      : block
   border-left  : $border
   border-right : $border
-  margin       : 40px auto
+  margin       : 40px auto 0 auto
   background   : white
+  box-shadow: 0px 0px 150px 10px rgba(0,0,0,0.2)
 
 // heading
 #blog-heading
@@ -33,7 +53,7 @@ h1
   margin        : 0
   height        : 60px
   display       : block
-
+  background    : rgba(0,0,0,0.4)
   h1
     padding-top : 8px
     color       : rgb(221, 221, 221)
@@ -51,27 +71,52 @@ h1
 // post
 
 .post
-  padding-top : 20px
+  padding-top : 40px
   font-family : source-sans-pro
   width       : 85%
-  height      : 400px
   display     : block
   position    : relative
   margin      : auto
+  padding-bottom : 50px
+  
+  .content
+    padding-bottom : 14px
 
   h1
     color       : black
-    font-size   : 40px
+    font-size   : 44px
+    font-weight : 200
+    margin      : 0
+    font-family : source-sans-pro
+
+  h2 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-size: 26px
+    font-weight: 300
+    line-height: 36px
+    margin-bottom: 18px
+    -webkit-font-smoothing: antialiased
+    -moz-font-smoothing: antialiased
+  
   hr
-    border-top  : 0px
+    //@include rgb-border
+    border-top     : 1px
+    //border  : 0px
+    //height : 1px
+
   a
     color       : black
+  p
+    font-weight : 100
+    -webkit-font-smoothing: antialiased
+    -moz-font-smoothing: antialiased
+
 
 // code
 
 pre
-  border      : $border
-  padding     : 10px
+  //border      : 1px dashed grey
+  //padding     : 10px
 
 footer
   position    : absolute
@@ -87,3 +132,17 @@ footer
     font-family : source-sans-pro
     font-size   : 12px
   
+.tags
+  padding-top: 20px
+
+//disqus
+#disqus_thread
+  background: rgb(255, 255, 255)
+  width: 85%
+  position: relative
+  margin: 0 auto
+  padding-bottom: 20px
+  font-family: source-sans-pro
+
+#discovery
+  display:none //!important

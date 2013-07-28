@@ -15,3 +15,12 @@ long time. That lull in my career is over and over the next few years I
 hope to create some interesting work under the public eye. I think it is
 important to collaborate moving forward.
 
+```JavaScript
+class Main
+  constructor : ( @type, @isDebug ) ->
+    if @isDebug then return
+    if !@type then return
+
+
+```
+
