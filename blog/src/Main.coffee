@@ -1,9 +1,13 @@
+#<< Database
+
 express = require 'express'
 routes = require './routes'
 user = require './routes/user'
 http = require 'http'
 path = require 'path'
 poet = require 'poet'
+
+
 
 class Blog
   app           :   null
@@ -28,6 +32,6 @@ class Blog
 
     http.createServer(@app).listen @app.get('port'), ()=> console.log 'Express server listening on port ' + @app.get('port')
 
-
+database = new Database()
 new Blog()
-        
+
