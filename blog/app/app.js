@@ -1,5 +1,5 @@
 (function() {
-  var Blog, Database, database, express, http, path, poet, routes, user;
+  var Blog, Database, express, http, path, poet, routes, user;
 
   Database = (function() {
 
@@ -48,34 +48,53 @@
 
     Blog.prototype.app = null;
 
+    Blog.prototype.database = null;
+
+    Blog.prototype.poet = null;
+
+    Blog.prototype.port = null;
+
     function Blog() {
+      this.port = process.env.PORT || 3000;
+      this.app = express();
+      this.startPoet();
       this.setupExpress();
     }
 
+    Blog.prototype.startPoet = function() {
+      var _this = this;
+      this.poet = require('poet')(this.app, {
+        postsPerPage: 3,
+        posts: './_posts',
+        metaFormat: 'json',
+        routes: {
+          '/posts/:post': 'post',
+          '/pagination/:page': 'page',
+          '/mytags/:tag': 'tag',
+          '/mycategories/:category': 'category'
+        }
+      });
+      return this.poet.init().then(function() {
+        console.log('poet initialized');
+        return console.log(_this.poet.posts);
+      });
+    };
+
     Blog.prototype.setupExpress = function() {
       var _this = this;
-      this.app = express();
-      this.app.set('port', 3000);
-      this.app.set('views', __dirname + '/views');
       this.app.set('view engine', 'jade');
-      this.app.use(express.favicon());
-      this.app.use(express.logger('dev'));
-      this.app.use(express.bodyParser());
-      this.app.use(express.methodOverride());
+      this.app.set('views', __dirname + '/views');
+      this.app.use(express["static"](__dirname + '/public'));
       this.app.use(this.app.router);
-      this.app.use(express["static"](path.join(__dirname, 'public')));
-      this.app.get('/', routes.index);
-      this.app.get('/users', user.list);
-      return http.createServer(this.app).listen(this.app.get('port'), function() {
-        return console.log('Express server listening on port ' + _this.app.get('port'));
+      this.app.get('/', function(req, res) {
+        return res.render('index');
       });
+      return this.app.listen(this.port);
     };
 
     return Blog;
 
   })();
-
-  database = new Database();
 
   new Blog();
 

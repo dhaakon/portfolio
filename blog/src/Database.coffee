@@ -1,5 +1,5 @@
 class Database
-  mysql : require 'mysql'
+  mysql    : require 'mysql'
   host     : process.env.RDS_HOSTNAME
   user     : process.env.RDS_USERNAME
   password : process.env.RDS_PASSWORD

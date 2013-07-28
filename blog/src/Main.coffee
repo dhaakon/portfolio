@@ -7,31 +7,42 @@ http = require 'http'
 path = require 'path'
 poet = require 'poet'
 
-
-
 class Blog
   app           :   null
-
+  database      :   null
+  poet          :   null
+  port          :   null
   constructor   :   ()->
+    @port = process.env.PORT or 3000
+    @app = express() 
+
+    @startPoet()
     @setupExpress()
 
+  startPoet     :   ()->
+    @poet = require('poet')(@app,   
+        postsPerPage: 3,
+        posts: './_posts',
+        metaFormat: 'json',
+        routes: {}=
+          '/posts/:post': 'post',
+          '/pagination/:page': 'page',
+          '/mytags/:tag': 'tag',
+          '/mycategories/:category': 'category'
+    )
+    @poet.init().then ()=> 
+      console.log 'poet initialized'
+      console.log @poet.posts
+
   setupExpress  :   ()->
-    @app = express()
-    @app.set 'port', 3000
-    @app.set 'views', __dirname + '/views'
     @app.set 'view engine', 'jade'
-    @app.use express.favicon()
-    @app.use express.logger 'dev'
-    @app.use express.bodyParser()
-    @app.use express.methodOverride()
+    @app.set 'views', __dirname + '/views'
+    @app.use express.static __dirname + '/public'
     @app.use @app.router
-    @app.use express.static path.join(__dirname, 'public')
 
-    @app.get('/', routes.index)
-    @app.get('/users', user.list)
+    @app.get '/', (req, res)=> res.render 'index'
 
-    http.createServer(@app).listen @app.get('port'), ()=> console.log 'Express server listening on port ' + @app.get('port')
+    @app.listen @port 
 
-database = new Database()
 new Blog()
 

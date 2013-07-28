@@ -1,8 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  margin: auto;
+  background: black; }
 
-a {
-  color: #00B7FF;
-}
+.date {
+  float: right;
+  padding-top: 48px; }
+
+.container {
+  width: 700px;
+  height: 100%;
+  display: block;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin: auto;
+  background: white; }
+
+.post {
+  padding-top: 60px;
+  font-family: source-sans-pro;
+  width: 400px;
+  height: 400px;
+  display: block;
+  position: relative;
+  margin: auto; }
+  .post h1 {
+    color: black;
+    font-size: 40px; }
+  .post hr {
+    border-top: 0px; }
+  .post a {
+    color: black; }
+
+pre {
+  border: 1px solid black;
+  padding: 10px; }
