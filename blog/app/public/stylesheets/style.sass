@@ -1,29 +1,59 @@
 $border: 1px solid black
+$red    :   rgba(255,0,0,0.65)
+$green  :   rgba(0,255,0,0.65)
+$blue   :   rgba(0,0,255,0.65)
+
+@mixin rgb-border
+  box-shadow: 0px 2px 0px 0px $red, 0px 4px 0px 0px $green, 0px 6px 0px 0px $blue
 
 body
-  margin     : auto
+  margin     : 0
   background : black
+
+h1
+  margin     : 0
 
 .date
   float        : right
-  padding-top  : 48px
+  padding-top  : 22px
 
-.container    
-  width        : 700px
+.container
+  width        : 768px
   height       : 100%
   display      : block
   border-left  : $border
   border-right : $border
-  margin       : auto
+  margin       : 40px auto
   background   : white
 
+// heading
+#blog-heading
+  @include rgb-border
+
+  margin        : 0
+  height        : 60px
+  display       : block
+
+  h1
+    padding-top : 8px
+    color       : rgb(221, 221, 221)
+    padding-left : 12px
+    letter-spacing: 0.5px
+    text-shadow: 0px 0px 30px rgb(255, 0, 0)
+    font        :
+      family    : overlock
+      style     : italic
+      size      : 2.3em
+    font-weight : 900
+  a
+    text-decoration : none
 
 // post
 
 .post
-  padding-top : 60px
+  padding-top : 20px
   font-family : source-sans-pro
-  width       : 400px
+  width       : 85%
   height      : 400px
   display     : block
   position    : relative
@@ -38,7 +68,22 @@ body
     color       : black
 
 // code
+
 pre
   border      : $border
   padding     : 10px
 
+footer
+  position    : absolute
+  bottom      : 0px
+  height      : 40px
+  display     : block
+  width       : 100%
+  
+  p
+    color       : grey
+    float       : left
+    text-indent : 20px
+    font-family : source-sans-pro
+    font-size   : 12px
+  

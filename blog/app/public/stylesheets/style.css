@@ -1,24 +1,45 @@
 body {
-  margin: auto;
+  margin: 0;
   background: black; }
+
+h1 {
+  margin: 0; }
 
 .date {
   float: right;
-  padding-top: 48px; }
+  padding-top: 22px; }
 
 .container {
-  width: 700px;
+  width: 768px;
   height: 100%;
   display: block;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  margin: auto;
+  margin: 40px auto;
   background: white; }
 
+#blog-heading {
+  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.65), 0px 4px 0px 0px rgba(0, 255, 0, 0.65), 0px 6px 0px 0px rgba(0, 0, 255, 0.65);
+  margin: 0;
+  height: 60px;
+  display: block; }
+  #blog-heading h1 {
+    padding-top: 8px;
+    color: #dddddd;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+    text-shadow: 0px 0px 30px red;
+    font-family: overlock;
+    font-style: italic;
+    font-size: 2.3em;
+    font-weight: 900; }
+  #blog-heading a {
+    text-decoration: none; }
+
 .post {
-  padding-top: 60px;
+  padding-top: 20px;
   font-family: source-sans-pro;
-  width: 400px;
+  width: 85%;
   height: 400px;
   display: block;
   position: relative;
@@ -34,3 +55,16 @@ body {
 pre {
   border: 1px solid black;
   padding: 10px; }
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+  display: block;
+  width: 100%; }
+  footer p {
+    color: grey;
+    float: left;
+    text-indent: 20px;
+    font-family: source-sans-pro;
+    font-size: 12px; }

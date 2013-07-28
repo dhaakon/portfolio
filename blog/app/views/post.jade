@@ -1,5 +1,4 @@
-extends layout
-  
+extends blogpost
 block content
   div.container
     div.post
@@ -12,3 +11,5 @@ block content
         - each tag in post.tags
           a(href=tagUrl(tag))
             span.label.label-info #{tag}
+
+
