@@ -16,6 +16,13 @@ in Markdown format with JSON Front Matter:
 Here goes the content that belongs to the post...
 ``` 
 
+Node
+----
+The source for the node server and blogging platform is a part of my
+portfolio repo it can be found
+[here](https://github.com/dhaakon/portfolio/tree/master/blog). It is
+written in CoffeeScript.
+
 Pre-Requisites
 ----
 - [node.js][1]
