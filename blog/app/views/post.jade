@@ -12,6 +12,13 @@ block content
         - each tag in post.tags
           a(href=tagUrl(tag))
             span.label.label-info #{tag}
+      div.navigation
+        nextPostUrl = nextPost
+        prevPostUrl = prevPost
+        if prevPostUrl
+          a.post-navigation.left(href=prevPostUrl) previous post
+        if nextPostUrl
+          a.post-navigation.right(href=nextPostUrl) next post
 
 
 block disqus

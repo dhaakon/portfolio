@@ -3,6 +3,11 @@ $red    :   rgba(255,0,0,0.65)
 $green  :   rgba(0,255,0,0.65)
 $blue   :   rgba(0,0,255,0.65)
 
+$inactive : grey
+$active    : black
+
+$Neue : "Helvetica Neue", Helvetica, Arial, sans-serif
+
 @mixin rgb-border
   box-shadow: 0px 2px 0px 0px $red, 0px 4px 0px 0px $green, 0px 6px 0px 0px $blue
 
@@ -16,6 +21,15 @@ $blue   :   rgba(0,0,255,0.65)
   background: radial-gradient(ellipse at center, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(175,30,30,1.0)', endColorstr='#0e0e0e',GradientType=1 )
 
+@mixin transition($time, $property)
+  -webkit-transition: $time $property
+  -moz-transition: $time $property
+  -ms-transition: $time $property
+  -o-transition: $time $property
+
+@mixin fade-in
+  @include transition(400ms, opacity)
+
 html
   -webkit-background-size: cover
   -moz-background-size: cover
@@ -25,7 +39,6 @@ html
 
 body
   margin     : 0
-  height     : 1080px
 
 h1
   margin     : 0
@@ -38,13 +51,16 @@ h1
   //float       : right
 
 .container
+  @include fade-in
+  opacity      : 0
   width        : 768px
   display      : block
   border-left  : $border
   border-right : $border
-  margin       : 40px auto 0 auto
+  margin       : 20px auto 0 auto
   background   : white
-  box-shadow: 0px 0px 150px 10px rgba(0,0,0,0.2)
+  box-shadow   : 0px -2px 0px 0px $red, 0px -3px 0px 0px $green, 0px -5px 0px 0px $blue, 0px 0px 150px 10px rgba(0,0,0,0.2)
+
 
 // heading
 #blog-heading
@@ -78,7 +94,8 @@ h1
   position    : relative
   margin      : auto
   padding-bottom : 50px
-  
+  color       : black
+
   .content
     padding-bottom : 14px
   blockquote
@@ -97,7 +114,7 @@ h1
     font-family : source-sans-pro
 
   h2 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: $Neue
     font-size: 26px
     font-weight: 300
     line-height: 36px
@@ -112,12 +129,19 @@ h1
     //height : 1px
 
   a
-    color       : black
+    //color       : black
   p
     font-weight : 100
     -webkit-font-smoothing: antialiased
     -moz-font-smoothing: antialiased
+  img
+    margin : auto
+    display: block
 
+.left
+  float: left
+.right
+  float: right
 
 // code
 
@@ -126,7 +150,7 @@ pre
   //padding     : 10px
 
 footer
-  position    : absolute
+  position    : fixed
   bottom      : 0px
   height      : 40px
   display     : block
@@ -140,7 +164,15 @@ footer
     font-size   : 12px
   
 .tags
-  padding-top: 20px
+  padding-top: 0px
+
+  a
+    padding-left: 20px
+    font:
+      size: 11px
+      weight: bold
+  a:first-child
+    padding-left: 0px
 
 //disqus
 #disqus_thread
@@ -153,3 +185,24 @@ footer
 
 #discovery
   display:none //!important
+
+// Post Navigation
+.navigation
+  padding-top: 30px
+
+  .post-navigation
+    background: $inactive
+    width: 150px
+    height: 30px
+    text-align: center
+    color: white
+    line-height: 30px
+    cursor: pointer
+    text-decoration: none
+    font-family: source-sans-pro
+    font-weight: 100
+    letter-spacing: 1px
+    font-size: 13px
+
+  .post-navigation:hover
+    background: $active

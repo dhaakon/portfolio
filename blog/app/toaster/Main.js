@@ -23,30 +23,85 @@
 
     Blog.prototype.port = null;
 
+    Blog.prototype.maxPosts = 0;
+
     function Blog() {
       this.port = process.env.PORT || 3000;
       this.app = express();
-      console.log(this.app);
       this.startPoet();
     }
 
     Blog.prototype.startPoet = function() {
       var _this = this;
 
-      this.poet = require('poet')(this.app, {
-        postsPerPage: 3,
-        posts: './_posts',
-        metaFormat: 'json',
+      this.options = {
         routes: {
-          '/posts/:post': 'post',
-          '/pagination/:page': 'page',
-          '/mytags/:tag': 'tag',
-          '/mycategories/:category': 'category'
+          '/posts/:post': 'post'
         }
-      });
-      return this.poet.init().then(function() {
+      };
+      this.poet = require('poet')(this.app, this.options);
+      return this.poet.watch().init().then(function() {
+        _this.indexPosts();
         return _this.setupExpress();
       });
+    };
+
+    Blog.prototype.indexPosts = function() {
+      var count, post, thisPost;
+
+      count = 0;
+      for (post in this.poet.posts) {
+        count++;
+        thisPost = this.poet.posts[post];
+        thisPost.index = count;
+      }
+      return this.maxPosts = count;
+    };
+
+    Blog.prototype.getPostByIndex = function(index) {
+      var post, thisPost;
+
+      for (post in this.poet.posts) {
+        thisPost = this.poet.posts[post];
+        if (thisPost.index === index) {
+          return thisPost;
+        }
+      }
+      return null;
+    };
+
+    Blog.prototype.addPostRoute = function() {
+      var cb,
+        _this = this;
+
+      cb = function(req, res) {
+        var nextPost, options, post, prevPost;
+
+        post = _this.poet.helpers.getPost(req.params.post);
+        console.log(post.index);
+        if (post.index < _this.maxPosts) {
+          nextPost = _this.getPostByIndex(post.index + 1).url;
+        }
+        if (post.index > 1) {
+          prevPost = _this.getPostByIndex(post.index - 1).url;
+        }
+        console.log(nextPost, prevPost);
+        options = {
+          post: post,
+          nextPost: nextPost,
+          prevPost: prevPost
+        };
+        if (post != null) {
+          return res.render('post', options);
+        } else {
+          return res.send(404);
+        }
+      };
+      return this.poet.addRoute('/posts/:post', cb);
+    };
+
+    Blog.prototype.addCustomRoutes = function() {
+      return this.addPostRoute();
     };
 
     Blog.prototype.setupExpress = function() {
@@ -54,12 +109,16 @@
         _this = this;
 
       this.app.set('view engine', 'jade');
+      this.app.set({
+        title: 'dhaakon'
+      });
       this.app.set('views', __dirname + '/views');
       this.app.use(express["static"](__dirname + '/public'));
-      this.app.use(this.app.router);
+      this.addCustomRoutes();
       cb = function(req, res) {
-        console.log(res);
-        return res.render('index');
+        return res.render('index', {
+          title: 'dhaakon'
+        });
       };
       this.app.get('/', cb);
       return this.app.listen(this.port);
