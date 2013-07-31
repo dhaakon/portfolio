@@ -5,12 +5,11 @@
     "date"     : "07-28-2013",
     "image"    : "img/none.jpg",
     "links"    : [],
-    "preview"  : "A quick rundown of the tools I use to create front-end experiences"
+    "preview"  : "A quick rundown of the tools I use to create front-end experiences."
 }}}
 
-> "The big artist keeps an eye on nature and steals her tools."
-> <br>
-> - [Thomas Eakins](http://www.artcyclopedia.org/art/thomas-eakins-biglin.jpg)
+> #### "The big artist keeps an eye on nature and steals her tools."
+> [Thomas Eakins](http://www.artcyclopedia.org/art/thomas-eakins-biglin.jpg)
 
 Every developer takes pride in the tools he uses to create his
 applications. I am no different. I spent a lot of time using multiple

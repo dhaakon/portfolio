@@ -5,7 +5,7 @@ toast 'src',
   exclude: ['src/site/']
 
   # => VENDORS (optional)
-  # vendors: ['vendors/x.js', 'vendors/y.js', ... ]
+  #vendors: ['vendors/moment.min.js' ]
 
   # => OPTIONS (optional, default values listed)
   bare:false 

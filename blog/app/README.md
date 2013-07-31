@@ -1,10 +1,15 @@
 dhaakon's blog
 ====
 
+#### STILL UNDER DEVELOPMENT
+ 
 This is a simple blog set up using [poet.js][3]. It's back-end is
 through [Amazon Web Services](http://aws.amazon.com). Posts are written
 in Markdown format with JSON Front Matter:
 
+Posts
+-----
+From the [poet.js homepage][3]:
 ```
 {{{
   "title": "Hello World!",

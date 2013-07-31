@@ -5,6 +5,7 @@ user = require './routes/user'
 http = require 'http'
 path = require 'path'
 poet = require 'poet'
+moment = require 'moment'
 
 class Blog
   app           :   null
@@ -18,7 +19,6 @@ class Blog
 
     @startPoet()
         
-
   startPoet     :   ()->
     @options =
       routes  :
@@ -35,13 +35,24 @@ class Blog
   ##
     
   indexPosts      : () ->
-    count = 0
+    # Container used to sort posts
+    tmpPosts = []
+  
+    # Iterate through the posts object and add a chron weight property
     for post of @poet.posts
-      count++
       thisPost = @poet.posts[post]
-      thisPost.index = count
-    
-    @maxPosts = count
+      thisPost.chron = moment(thisPost.date).format('l').split('/')[0] +  moment(thisPost.date).format('l').split('/')[1]
+      tmpPosts.push thisPost
+
+    # Sort based on the date posted
+    tmpPosts.sort (a,b)=> return a.chron - b.chron
+
+    # Assign the index
+    for post in [1 .. tmpPosts.length]
+      tmpPosts[post - 1].index = post
+
+    # Set the max post
+    @maxPosts = tmpPosts.length
 
   ##
   # getPostByIndex - helper function to get a blog post by it's index.
@@ -60,14 +71,10 @@ class Blog
     cb = (req, res) =>
       post = @poet.helpers.getPost req.params.post
 
-      console.log post.index
-
       if post.index < @maxPosts
         nextPost = @getPostByIndex(post.index + 1).url
       if post.index > 1
         prevPost = @getPostByIndex(post.index - 1).url
-
-      console.log nextPost, prevPost
 
       options =
         post     : post

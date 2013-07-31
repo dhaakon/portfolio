@@ -1,3 +1,116 @@
+/* line 5, ../sass/blog/post.sass */
+.post {
+  padding-top: 40px;
+  font-family: source-sans-pro;
+  width: 85%;
+  display: block;
+  position: relative;
+  margin: auto;
+  padding-bottom: 50px;
+  color: black;
+}
+/* line 15, ../sass/blog/post.sass */
+.post .content {
+  padding-bottom: 14px;
+}
+/* line 18, ../sass/blog/post.sass */
+.post blockquote {
+  font-family: overlock;
+  font-size: 26px;
+  font-style: italic;
+  color: grey;
+}
+/* line 26, ../sass/blog/post.sass */
+.post h1 {
+  color: black;
+  font-size: 44px;
+  font-weight: 200;
+  margin: 0;
+  font-family: source-sans-pro;
+}
+/* line 33, ../sass/blog/post.sass */
+.post h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 36px;
+  margin-bottom: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+/* line 42, ../sass/blog/post.sass */
+.post hr {
+  border-top: 1px;
+}
+/* line 48, ../sass/blog/post.sass */
+.post a {
+  color: black;
+}
+/* line 50, ../sass/blog/post.sass */
+.post p {
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+/* line 54, ../sass/blog/post.sass */
+.post img {
+  margin: auto;
+  display: block;
+}
+
+/* line 59, ../sass/blog/post.sass */
+.navigation {
+  padding-top: 0px;
+  padding-bottom: 30px;
+  width: 768px;
+  height: 60px;
+  margin: auto;
+  background: white;
+}
+/* line 67, ../sass/blog/post.sass */
+.navigation .left {
+  margin-left: 60px;
+}
+/* line 69, ../sass/blog/post.sass */
+.navigation .right {
+  margin-right: 60px;
+}
+/* line 72, ../sass/blog/post.sass */
+.navigation .post-navigation {
+  background: grey;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: source-sans-pro;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+/* line 86, ../sass/blog/post.sass */
+.navigation .post-navigation:hover {
+  background: black;
+}
+
+/* line 89, ../sass/blog/post.sass */
+.date {
+  font-family: source-sans-pro;
+  font-weight: 100;
+  font-size: 14px;
+  color: grey;
+}
+
+/* line 96, ../sass/blog/post.sass */
+#post-wrapper {
+  width: 768px;
+  margin: auto;
+  background: white;
+}
+
+/* line 36, ../sass/style.sass */
 html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,20 +123,45 @@ html {
   background: -o-radial-gradient(center, ellipse cover, #af1e1e 0%, #0e0e0e 100%);
   background: -ms-radial-gradient(center, ellipse cover, #af1e1e 0%, #0e0e0e 100%);
   background: radial-gradient(ellipse at center, #af1e1e 0%, #0e0e0e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(175,30,30,1.0)', endColorstr='#0e0e0e',GradientType=1 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(175,30,30,1.0)', endColorstr='#0e0e0e',GradientType=1 );
+}
 
+/* line 43, ../sass/style.sass */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
-h1 {
-  margin: 0; }
+/* line 46, ../sass/style.sass */
+h1, h2, h3, h4 {
+  margin: 0;
+}
 
-.date {
-  font-family: source-sans-pro;
-  font-weight: 100;
-  font-size: 14px;
-  color: grey; }
+/* line 50, ../sass/style.sass */
+#blog-heading {
+  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.65), 0px 4px 0px 0px rgba(0, 255, 0, 0.65), 0px 6px 0px 0px rgba(0, 0, 255, 0.65);
+  margin: 0;
+  height: 60px;
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* line 57, ../sass/style.sass */
+#blog-heading h1 {
+  padding-top: 8px;
+  color: #dddddd;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 0px 30px red;
+  font-family: overlock;
+  font-style: italic;
+  font-size: 2.3em;
+  font-weight: 900;
+}
+/* line 68, ../sass/style.sass */
+#blog-heading a {
+  text-decoration: none;
+}
 
+/* line 72, ../sass/style.sass */
 .container {
   -webkit-transition: 400ms opacity;
   -moz-transition: 400ms opacity;
@@ -32,121 +170,59 @@ h1 {
   opacity: 0;
   width: 768px;
   display: block;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
   margin: 20px auto 0 auto;
   background: white;
-  box-shadow: 0px -2px 0px 0px rgba(255, 0, 0, 0.65), 0px -3px 0px 0px rgba(0, 255, 0, 0.65), 0px -5px 0px 0px rgba(0, 0, 255, 0.65), 0px 0px 150px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px -2px 0px 0px rgba(255, 0, 0, 0.65), 0px -3px 0px 0px rgba(0, 255, 0, 0.65), 0px -5px 0px 0px rgba(0, 0, 255, 0.65), 0px 0px 150px 10px rgba(0, 0, 0, 0.2);
+}
 
-#blog-heading {
-  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.65), 0px 4px 0px 0px rgba(0, 255, 0, 0.65), 0px 6px 0px 0px rgba(0, 0, 255, 0.65);
-  margin: 0;
-  height: 60px;
-  display: block;
-  background: rgba(0, 0, 0, 0.4); }
-  #blog-heading h1 {
-    padding-top: 8px;
-    color: #dddddd;
-    padding-left: 12px;
-    letter-spacing: 0.5px;
-    text-shadow: 0px 0px 30px red;
-    font-family: overlock;
-    font-style: italic;
-    font-size: 2.3em;
-    font-weight: 900; }
-  #blog-heading a {
-    text-decoration: none; }
-
-.post {
-  padding-top: 40px;
-  font-family: source-sans-pro;
-  width: 85%;
-  display: block;
-  position: relative;
-  margin: auto;
-  padding-bottom: 50px;
-  color: black; }
-  .post .content {
-    padding-bottom: 14px; }
-  .post blockquote {
-    font-family: overlock;
-    font-size: 26px;
-    font-style: italic;
-    color: grey; }
-  .post h1 {
-    color: black;
-    font-size: 44px;
-    font-weight: 200;
-    margin: 0;
-    font-family: source-sans-pro; }
-  .post h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 36px;
-    margin-bottom: 18px;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased; }
-  .post hr {
-    border-top: 1px; }
-  .post p {
-    font-weight: 100;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased; }
-  .post img {
-    margin: auto;
-    display: block; }
-
+/* line 81, ../sass/style.sass */
 .left {
-  float: left; }
+  float: left;
+}
 
+/* line 83, ../sass/style.sass */
 .right {
-  float: right; }
+  float: right;
+}
 
+/* line 92, ../sass/style.sass */
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0px;
   height: 40px;
   display: block;
-  width: 100%; }
-  footer p {
-    color: grey;
-    float: left;
-    text-indent: 20px;
-    font-family: source-sans-pro;
-    font-size: 12px; }
+  width: 100%;
+}
+/* line 99, ../sass/style.sass */
+footer p {
+  color: grey;
+  float: left;
+  text-indent: 20px;
+  font-family: source-sans-pro;
+  font-size: 12px;
+}
 
+/* line 106, ../sass/style.sass */
 .tags {
-  padding-top: 0px; }
-  .tags a {
-    padding-left: 20px;
-    font-size: 11px;
-    font-weight: bold; }
-  .tags a:first-child {
-    padding-left: 0px; }
+  padding-top: 0px;
+}
+/* line 109, ../sass/style.sass */
+.tags a {
+  padding-left: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+/* line 114, ../sass/style.sass */
+.tags a:first-child {
+  padding-left: 0px;
+}
 
+/* line 118, ../sass/style.sass */
 #disqus_thread {
   background: white;
   width: 85%;
   position: relative;
   margin: 0 auto;
   padding-bottom: 20px;
-  font-family: source-sans-pro; }
-
-.navigation {
-  padding-top: 30px; }
-  .navigation .post-navigation {
-    background: grey;
-    width: 150px;
-    height: 30px;
-    text-align: center;
-    color: white;
-    line-height: 30px;
-    cursor: pointer;
-    text-decoration: none;
-    font-family: source-sans-pro;
-    font-weight: 100;
-    letter-spacing: 1px;
-    font-size: 13px; }
-  .navigation .post-navigation:hover {
-    background: black; }
+  font-family: source-sans-pro;
+}

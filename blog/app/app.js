@@ -1,5 +1,5 @@
 (function() {
-  var Blog, Database, express, http, path, poet, routes, user;
+  var Blog, Database, express, http, moment, path, poet, routes, user;
 
   Database = (function() {
 
@@ -44,6 +44,8 @@
 
   poet = require('poet');
 
+  moment = require('moment');
+
   Blog = (function() {
 
     Blog.prototype.app = null;
@@ -77,14 +79,21 @@
     };
 
     Blog.prototype.indexPosts = function() {
-      var count, post, thisPost;
-      count = 0;
+      var post, thisPost, tmpPosts, _i, _ref,
+        _this = this;
+      tmpPosts = [];
       for (post in this.poet.posts) {
-        count++;
         thisPost = this.poet.posts[post];
-        thisPost.index = count;
+        thisPost.chron = moment(thisPost.date).format('l').split('/')[0] + moment(thisPost.date).format('l').split('/')[1];
+        tmpPosts.push(thisPost);
       }
-      return this.maxPosts = count;
+      tmpPosts.sort(function(a, b) {
+        return a.chron - b.chron;
+      });
+      for (post = _i = 1, _ref = tmpPosts.length; 1 <= _ref ? _i <= _ref : _i >= _ref; post = 1 <= _ref ? ++_i : --_i) {
+        tmpPosts[post - 1].index = post;
+      }
+      return this.maxPosts = tmpPosts.length;
     };
 
     Blog.prototype.getPostByIndex = function(index) {
@@ -104,14 +113,12 @@
       cb = function(req, res) {
         var nextPost, options, post, prevPost;
         post = _this.poet.helpers.getPost(req.params.post);
-        console.log(post.index);
         if (post.index < _this.maxPosts) {
           nextPost = _this.getPostByIndex(post.index + 1).url;
         }
         if (post.index > 1) {
           prevPost = _this.getPostByIndex(post.index - 1).url;
         }
-        console.log(nextPost, prevPost);
         options = {
           post: post,
           nextPost: nextPost,
