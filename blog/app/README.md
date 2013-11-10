@@ -4,7 +4,7 @@ dhaakon's blog
 #### STILL UNDER DEVELOPMENT
  
 This is a simple blog set up using [poet.js][3]. It's back-end is
-through [Amazon Web Services](http://aws.amazon.com). Posts are written
+through [Amazon Web Services]( http://aws.amazon.com ). Posts are written
 in Markdown format with JSON Front Matter:
 
 Posts
@@ -25,7 +25,7 @@ Node
 ----
 The source for the node server and blogging platform is a part of my
 portfolio repo it can be found
-[here](https://github.com/dhaakon/portfolio/tree/master/blog). It is
+[here]( https://github.com/dhaakon/portfolio/tree/master/blog ). It is
 written in CoffeeScript.
 
 Pre-Requisites
@@ -37,4 +37,21 @@ Pre-Requisites
 [1]: http://nodejs.org "Node"
 [2]: http://expressjs.com "Express"
 [3]: http://jsantell.github.io/poet/ "Poet"
+
+TODO
+====
+
+Minor
+----
+
+- [ ] Tags to index page
+
+
+Major
+----
+
+- [ ] Responsive
+- [ ] Retina Images
+- [ ] First 3 Blog posts
+- [ ] Illustrations
 

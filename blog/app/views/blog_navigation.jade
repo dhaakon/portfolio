@@ -1,0 +1,11 @@
+block navigation
+  div.navigation
+    nextPostUrl = nextPost
+    prevPostUrl = prevPost
+    if prevPostUrl
+      a.post-navigation.text-right.left(href=prevPostUrl) &#65513;
+
+    a#home(href='/')
+      img(src='/images/home.png')
+    if nextPostUrl
+      a.post-navigation.text-left.right(href=nextPostUrl) &#65515;

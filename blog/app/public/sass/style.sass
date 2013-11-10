@@ -1,129 +1,147 @@
 $border: 1px solid black
-$red    :   rgba(255,0,0,0.65)
-$green  :   rgba(0,255,0,0.65)
-$blue   :   rgba(0,0,255,0.65)
+$red:       rgba(255,0,0,0.65)
+$green:     rgba(0,255,0,0.65)
+$blue:      rgba(0,0,255,0.65)
 
-$inactive : grey
-$active    : black
+$sidebar_width: 200px
+$buffer: 100px
 
-$Neue : "Helvetica Neue", Helvetica, Arial, sans-serif
+$width:     748px + $buffer
+
+$inactive:  grey
+$active:     black
+
+$Neue:  "Helvetica Neue", Helvetica, Arial, sans-serif
 
 
 @import blog/post.sass
+@import blog/social.sass
+@import blog/sidebar.sass
 
 @mixin rgb-border
-  box-shadow: 0px 2px 0px 0px $red, 0px 4px 0px 0px $green, 0px 6px 0px 0px $blue
+  :box-shadow 0px 2px 0px 0px $red, 0px 4px 0px 0px $green, 0px 6px 0px 0px $blue
 
 @mixin bg
-  background: rgba(175,30,30,1.0)
-  background: -moz-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%, #0e0e0e 100%)
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(175,30,30,1.0)), color-stop(100%,#000000))
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 30%,#000000 100%)
-  background: -o-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
-  background: -ms-radial-gradient(center, ellipse cover, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
-  background: radial-gradient(ellipse at center, rgba(175,30,30,1.0) 0%,#0e0e0e 100%)
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(175,30,30,1.0)', endColorstr='#0e0e0e',GradientType=1 )
+  :background black 
 
 @mixin transition($time, $property)
-  -webkit-transition: $time $property
-  -moz-transition: $time $property
-  -ms-transition: $time $property
-  -o-transition: $time $property
+  :-webkit-transition $time, $property 
+  :-moz-transition $time, $property 
+  :-ms-transition $time, $property 
+  :-o-transition $time, $property 
 
 @mixin fade-in
   @include transition(400ms, opacity)
 
+
+
 html
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
+  :background-size cover
   @include bg
 
-body
+html, body
   :margin 0
+  :height 100%
 
 h1, h2, h3, h4
-  margin     : 0
+  :margin      0
 
 // heading
 #blog-heading
-  @include rgb-border
+  //@include rgb-border
+  //:background     rgba(0,0,0,0.4)
 
-  margin        : 0
-  height        : 60px
-  display       : block
-  background    : rgba(0,0,0,0.4)
+
+  :margin         auto
+  :height         60px
+  :display        block
+  :width          $width + $sidebar_width
+  :text-align     center
+  :color          black
+  :background     white
+  :position       relative
+
   h1
-    padding-top : 8px
-    color       : rgb(221, 221, 221)
-    padding-left : 12px
-    letter-spacing: 0.5px
-    text-shadow: 0px 0px 30px rgb(255, 0, 0)
-    font        :
-      family    : overlock
-      style     : italic
-      size      : 2.3em
-    font-weight : 900
+    :padding-top  8px
+    :color        black
+    :padding-left  0px
+    :letter-spacing -2px
+    //:text-shadow 0px 0px 30px rgb(255, 0, 0)
+    :font        
+      :family     overlock
+      :style      italic
+      :size       2.3em
+    :font-weight  800
+    :position     absolute
+
+    :display      block
+  .left
+    :left 40px
+
+  .right
+    :right 0px
   a
-    text-decoration : none
+    :text-decoration  none
+
+  #portfolio-links
+    :padding-top 14px
+    :padding-right 40px
+    a
+      :color black
+      :padding-left 30px
+
+    a:hover
+      :text-decoration underline
+    :font
+      :family source-sans-pro
 
 
 .container
   @include fade-in
-  opacity      : 0
-  width        : 768px
-  display      : block
-  margin       : 20px auto 0 auto
-  background   : white
-  box-shadow   : 0px -2px 0px 0px $red, 0px -3px 0px 0px $green, 0px -5px 0px 0px $blue, 0px 0px 150px 10px rgba(0,0,0,0.2)
+  :opacity       0
+  :width         $width + $sidebar_width
+  :display       block
+  :margin        0px auto 0 auto
+  :background    white
+  :float left
 
 .left
-  float: left
+  :float left
 .right
-  float: right
+  :float right
 
 // code
-
-pre
-  //border      : 1px dashed grey
-  //padding     : 10px
-
 footer
-  position    : relative 
-  bottom      : 0px
-  height      : 40px
-  display     : block
-  width       : 100%
+  :position     relative 
+  :bottom       0px
+  :height       40px
+  :display      block
+  :width        100%
   
   p
-    color       : grey
-    float       : left
-    text-indent : 20px
-    font-family : source-sans-pro
-    font-size   : 12px
+    :color        grey
+    :float        left
+    :text-indent  20px
+    :font-family  source-sans-pro
+    :font-size    12px
   
 .tags
-  padding-top: 0px
+  :padding-top 0px
 
   a
-    padding-left: 20px
-    font:
-      size: 11px
-      weight: bold
+    :padding-left 20px
+    :font
+      :size 11px
+      :weight bold
   a:first-child
-    padding-left: 0px
+    :padding-left 0px
 
 //disqus
 #disqus_thread
-  background: rgb(255, 255, 255)
-  width: 85%
-  position: relative
-  margin: 0 auto
-  padding-bottom: 20px
-  font-family: source-sans-pro
-
-#discovery
-  display:none //!important
-
+  :background rgb(255, 255, 255)
+  :width 85%
+  :position relative
+  :margin 0 auto
+  :padding-bottom 20px
+  :font-family source-sans-pro
 

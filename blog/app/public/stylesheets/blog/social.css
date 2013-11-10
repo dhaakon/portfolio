@@ -1,20 +1,25 @@
 /*
-Syntax error: File to import not found or unreadable: post.
-              Load paths:
-                /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass
-                /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets
-                /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets
-                Compass::SpriteImporter
-        on line 6 of /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/print.sass
-
-1: /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/print.sass
+Syntax error: Undefined variable: "$width".
+        on line 8 of /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/blog/social.sass
 
 Backtrace:
-/Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/print.sass:6
-/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/import_node.rb:67:in `import'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:217:in `visit_import'
+/Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/blog/social.sass:8
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/script/variable.rb:49:in `_perform'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/script/node.rb:40:in `perform'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/script/operation.rb:74:in `_perform'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/script/node.rb:40:in `perform'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:298:in `visit_prop'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:109:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:121:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:108:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:320:in `visit_rule'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.6/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
@@ -76,4 +81,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: post.\A               Load paths:\A                 /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 6 of /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/print.sass\A \A 1: /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/print.sass"; }
+  content: "Syntax error: Undefined variable: \"$width\".\A         on line 8 of /Users/Poyner/Development/professional/dhaakon/portfolio/portfolio/blog/app/public/sass/blog/social.sass"; }

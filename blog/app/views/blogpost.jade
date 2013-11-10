@@ -6,13 +6,23 @@ html
     script(src="http://code.jquery.com/jquery-1.9.0.js")
     script(src='/javascripts/BlogJS.js')
     script(src='//use.edgefonts.net/source-sans-pro;overlock:n4,i4,n7,i7,n9,i9.js')
+    script(src='//use.typekit.net/wty6abc.js')
+    script.
+      try{Typekit.load();}catch(e){}
+
   body
     div#blog-heading
-      a(href='mailto:david.poyner@dhaakon.com')
-        h1 dhaakon
-    div#post-wrapper
-      block content
-      block navigation
-      block disqus
-  footer
-    p david poyner &nbsp; &nbsp; || &nbsp; &nbsp; blog
+      h1.left dhaakon's blog
+      span.right#portfolio-links
+        a(href="http://www.dhaakon.com/#work") work
+        a(href="http://www.dhaakon.com/#experiments") experiments
+        a(href="http://www.dhaakon.com/#about") about
+    div#dhaakon-blog-container
+      div#post-wrapper.left
+        block content
+        include social
+        block navigation
+        
+      div#sidebar.right
+        include sidebar
+     

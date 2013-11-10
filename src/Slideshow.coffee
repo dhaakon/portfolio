@@ -26,10 +26,6 @@ class Slideshow extends Module
   maxSlides       : 5
   timer           : 0
 
-  #navigation      :
-    #previousButton : $ '#previous-btn'
-    #nextButton           : $ '#next-btn'
-
   startX : 0
   endX   : 0
 
@@ -138,7 +134,6 @@ class Slideshow extends Module
     cb = () => @wrapper.style.display = 'none'
     Animations.fade 'out', @wrapper, 0, 0.25, cb 
     @currentSlide = @FIRST_SLIDE
-    #@onResize()
 
   close           : () =>
     @slides[@currentSlide].deactivate()

@@ -1,8 +1,10 @@
 {{{
     "title"    : "Hello, World",
     "tags"     : [ "Commentary" ],
+    "author"   : "David Poyner",
     "category" : "Social",
     "date"        : "07-27-2013",
+    "image"    : "./images/hello-world.jpg",
     "references"  : [],
     "preview"     : "First blog post testing out poet and node.js"
 

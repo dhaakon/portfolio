@@ -1,0 +1,333 @@
+$Neue:  "Helvetica Neue", Helvetica, Arial, sans-serif
+$inactive:  grey
+$active:     black
+$post_width_offset:150
+.post-image
+  :text-align center
+  :display block
+  :width 437px
+  :height 220px
+  :margin 0 auto
+.post-heading
+  :width          $width + $sidebar_width
+  :padding-top    16px
+  :padding-bottom 14px
+  :position absolute
+  :z-index 10
+
+  img
+    :margin-top 14px
+
+  h1
+    :color        white
+    :font-size    2.75em
+    :font-weight  200
+    :margin       0
+    :font-family  overlock
+    :text-align   center
+    :letter-spacing -2px
+    :font-weight 800
+    :font-style italic
+    :margin auto
+    :text-shadow 0px 0px 15px rgba(0,0,200,0.4)
+
+
+  div
+    :width 500px
+    :height 200px
+    :position absolute
+    :top 168px
+    :left 175px
+      
+  .left
+    :float left
+  .right
+    :float right
+
+#index-title
+  :font-family overlock
+  :font-size 4em
+  :font-weight 900
+  :font-style italic
+  :letter-spacing -1px
+  :text-align center
+  :width $width + $sidebar_width
+
+.index-post, .post
+  :padding-top 0px
+  :font-family source-sans-pro
+  :width        $width - $post_width_offset
+  :display      block
+  :position     relative
+  :margin       auto
+
+  :color        black
+  :clear both
+  :float left
+
+  :margin-left 80px
+  :padding-left 0px
+  .content
+    :padding-bottom  14px
+    :padding-top  34px
+
+  :border-top 1px solid lightGrey
+  :border-bottom 1px solid lightGrey
+
+  blockquote
+    font        
+      :family     overlock
+      :size       26px
+      :style      italic
+
+    :color      grey
+
+  h1
+    :color        black
+    :font-size    44px
+    :font-weight  200
+    :margin       0
+    :font-family  source-sans-pro
+
+  h2 
+    :font-family $Neue
+    :font-size 20px
+    :font-weight bold
+    :line-height 36px
+    :margin-top 0px
+    :-webkit-font-smoothing antialiased
+    :-moz-font-smoothing antialiased
+    //:text-align   center
+    :letter-spacing 0px
+    :position relative
+    :display block
+
+  hr
+    :border-top      1px
+
+  a
+    :color        black
+  p
+    :font-weight  100
+    :-webkit-font-smoothing antialiased
+    :-moz-font-smoothing antialiased
+    :font-family "minion-pro"
+    :font-size 18px
+
+  img
+    :margin  0
+    :padding 20px
+    :border 1px solid gray
+    :display block
+    :max-width 468px
+
+
+.index-post
+  :padding-top 40px
+  :padding-bottom 20px
+  :padding-left 40px
+
+  :margin-left 40px
+  :border-top 0px solid lightGrey
+  :border-bottom 2px solid lightGrey
+
+  h1
+    :margin 0
+    :font-family overlock
+    :font-weight 800
+    :font-size 2em
+    :font-style italic
+    :letter-spacing -1px
+
+  .date
+    :font-family  source-sans-pro
+    :font-weight  100
+    :font-size    17px
+    :color        black
+    :width        60px
+    :display      block
+    :margin       0
+    :text-align left
+
+    //:right 0px
+    //:top 40px
+  .preview
+    :padding-bottom 40px
+
+  .preview a
+    //:background $inactive
+    :text-align left
+    :color black
+    :line-height 30px
+    :cursor pointer
+    :text-decoration none
+    :font-family source-sans-pro
+    :letter-spacing 0px
+    :font-size 16px
+    //:font-weight bold
+    :display block
+    :position     absolute
+    :right        38px
+    :top          188px
+    :z-index      20
+    //:text-shadow 0px 0px 6px black
+
+  .preview a:hover
+    :text-decoration underline 
+  
+  $image_width: 150px
+  
+  img
+    :width $image_width
+    :display block
+    :opacity 1
+    :width $image_width
+    :z-index 10
+
+  #image-background
+    :z-index 11
+    :height $image_width
+    :width $image_width
+    //:background black
+    :position absolute
+    border-radius: ($image_width/2)
+    //box-shadow: inset 0px 0px 40px 0px black
+  
+  #image-background:hover, a.preview:hover
+    box-shadow: inset 0px 0px 0px black
+
+  img, #image-background
+    :position absolute
+    :right 0px
+    :top 22px
+    :display block
+
+
+// Post Navigation
+.navigation
+  :padding-top 0px
+  :padding-bottom 30px
+  :width $width + $sidebar_width
+  :height 60px
+  :margin auto
+  :background white
+  :clear both
+  :position relative
+  .left
+    :margin-left 80px
+  .right
+    :margin-right 80px
+
+  .post-navigation
+    //:background $inactive
+    :width 414px
+    :height 30px
+    :text-align center
+    :color black
+    :line-height 30px
+    :cursor pointer
+    :text-decoration none
+    :font-family source-sans-pro
+    :font-weight bold
+    :letter-spacing 1px
+    :font-size 2em
+    :opacity 0.6
+
+  .text-left
+    :text-align left
+  .text-right
+    :text-align right
+
+  #home
+    :position absolute
+    :left 514px
+    :top 4px
+    :opacity 0.6
+    img
+      :width 20px
+
+  #home:hover
+    :opacity 1
+      
+
+  .post-navigation:hover
+    //:background $active
+    :opacity 1
+#title-container
+  :width 648px
+  :margin auto
+  
+.date
+  :font-family  "Georgia"
+  :font-weight  400
+  :font-size    18px
+  :color        black
+  :display      block
+  :margin       auto
+  :font-style   italic
+  :width        76px
+
+#post-wrapper
+  :width      $width
+  :margin     auto
+  :background white
+
+#dhaakon-blog-container
+  :width      $width + $sidebar_width
+  :position   relative
+  :margin     auto
+  :display    block
+  :min-height 100%
+  :background white
+
+
+footer
+  width: 100%
+  height: 40px
+  display: block
+  position: relative
+  bottom: 0px
+  left: 10px
+  font-size: 12px
+  color: rgb(120,120,120)
+  font-family: source-sans-pro
+  :clear both
+
+.scaled-container, #wrapper
+  :position absolute
+  :top 0px
+  :bottom 0px
+  :width 100%
+  :display block
+  :background white
+
+#left-image-container, #right-image-container
+  :width 200px
+  :height 100px
+  :display block
+#right-image-container
+  :float right
+#left-image-container
+  :float left
+
+$go_size: 60px
+
+.go-button
+  :display block
+  :width $go_size
+  :height $go_size
+  :border-radius $go_size/2
+  //:background rgba(0,0,0,0.6)
+  
+  :border 1px solid lightGrey
+  :position absolute
+  :right 50px
+  :top 80px
+
+  p
+    :position absolute
+    :top -58px
+    :left 20px
+    :font-size 50px
+    :color lightGrey
+

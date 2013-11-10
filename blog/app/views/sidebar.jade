@@ -1,0 +1,17 @@
+block sidebar
+  div.sidebar-container
+    h1 recent posts
+    br
+    - var posts = getPosts(0,5)
+    - var page  = 1
+    - each post in posts
+      postTitle = post.title.toLowerCase()
+      postURL = post.url
+      a(href=postURL) #{postTitle}   
+    br
+    h1 tags
+    br
+    - var tags = getTags()
+    - each tag in tags
+      a #{tag.toLowerCase()}
+

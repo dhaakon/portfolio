@@ -73,7 +73,7 @@
           return thisPost;
         }
       }
-      return null;
+      throw new Error('Index out of Bounds');
     };
 
     Blog.prototype.addPostRoute = function() {
@@ -93,6 +93,7 @@
           nextPost: nextPost,
           prevPost: prevPost
         };
+        console.log(options.nextPost);
         if (post != null) {
           return res.render('post', options);
         } else {
@@ -110,6 +111,9 @@
       var cb,
         _this = this;
       this.app.set('view engine', 'jade');
+      this.app.set('view options', {
+        layout: false
+      });
       this.app.set({
         title: 'dhaakon'
       });
